@@ -1,4 +1,15 @@
+import { StyledHomeContainer, StyledSolarSystemImage } from './home.styles';
+
 const Home = () => {
-  return <h1>Home</h1>;
+  return (
+    <>
+      <StyledHomeContainer>
+        <StyledSolarSystemImage
+          src='/assets/Solar-sistem.png'
+          alt='Solar System'
+        />
+      </StyledHomeContainer>
+    </>
+  );
 };
 export default Home;

@@ -29,6 +29,9 @@ export const GlobalStyles = createGlobalStyle`
 
     body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: "Antonio", sans-serif;
+    color: #fff;
+    background-color: #070724;
+  background-image: url('/assets/background-stars.svg');
     }
 `;
