@@ -4,12 +4,12 @@ import {
   StyledHamburgerMenuLine
 } from './header.styles';
 
-const Header = () => {
+const Header = ({ handleMenuClick }) => {
   return (
     <>
       <StyledHeaderContainer>
         <h1>THE PLANETS</h1>
-        <StyledHamburgerMenu>
+        <StyledHamburgerMenu onClick={handleMenuClick}>
           <StyledHamburgerMenuLine />
           <StyledHamburgerMenuLine />
           <StyledHamburgerMenuLine />

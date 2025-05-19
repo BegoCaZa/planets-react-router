@@ -1,20 +1,24 @@
 import { Route, Routes } from 'react-router-dom';
 import Planet from '../../pages/planet/Planet';
 import Home from '../../pages/home/Home';
+import Menu from '../../components/menu/Menu';
 
-const Router = () => {
+const Router = ({ menuOpen, setMenuOpen }) => {
   return (
-    <Routes>
-      <Route path='/' element={<Home page='Home' />} />
-      <Route path='/mercury' element={<Planet page='Mercury' />} />
-      <Route path='/venus' element={<Planet page='Venus' />} />
-      <Route path='/earth' element={<Planet page='Earth' />} />
-      <Route path='/mars' element={<Planet page='Mars' />} />
-      <Route path='/jupiter' element={<Planet page='Jupiter' />} />
-      <Route path='/saturn' element={<Planet page='Saturn' />} />
-      <Route path='/uranus' element={<Planet page='Uranus' />} />
-      <Route path='/neptune' element={<Planet page='Neptune' />} />
-    </Routes>
+    <>
+      {menuOpen && <Menu setMenuOpen={setMenuOpen} />}
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/mercury' element={<Planet page='Mercury' />} />
+        <Route path='/venus' element={<Planet page='Venus' />} />
+        <Route path='/earth' element={<Planet page='Earth' />} />
+        <Route path='/mars' element={<Planet page='Mars' />} />
+        <Route path='/jupiter' element={<Planet page='Jupiter' />} />
+        <Route path='/saturn' element={<Planet page='Saturn' />} />
+        <Route path='/uranus' element={<Planet page='Uranus' />} />
+        <Route path='/neptune' element={<Planet page='Neptune' />} />
+      </Routes>
+    </>
   );
 };
 
