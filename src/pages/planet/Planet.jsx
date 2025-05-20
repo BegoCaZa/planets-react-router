@@ -12,7 +12,8 @@ import {
   StyledStatsContainer,
   StyledStatLabel,
   StyledStatValue,
-  StyledPlanetName
+  StyledPlanetName,
+  StyledSurfaceImage
 } from './planet.styles';
 import { useState } from 'react';
 import { PLANETS_DATA } from '../../constants/planets_data';
@@ -40,14 +41,27 @@ const Planet = ({ planet }) => {
           </StyledTabMenuOption>
         ))}
       </StyledTabMenu>
-      <StyledPlanetImage
-        $width={planetData.imageWidth}
-        src={`/assets/planet-${planet}.svg`}
-      />
+
+      {/* si no esta en surface, respetara la imagen segun el array */}
+      {activeTab !== 'surface' ? (
+        <StyledPlanetImage
+          $width={planetData.imageWidth}
+          src={planetData.images[activeTab]}
+        />
+      ) : (
+        <>
+          <StyledPlanetImage
+            $width={planetData.imageWidth}
+            src={planetData.images.overview}
+          />
+          <StyledSurfaceImage src={planetData.images.surface} />
+        </>
+      )}
+
       <StyledPlanetName>{planet.toUpperCase()}</StyledPlanetName>
       <StyledDescriptionContainer>
         <StyledPlanetDescription>
-          {planetData.description.overview}
+          {planetData.description[activeTab]}
         </StyledPlanetDescription>
       </StyledDescriptionContainer>
       <StyledSourceContainer>

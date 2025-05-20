@@ -33,6 +33,12 @@ const StyledPlanetImage = styled.img`
   width: ${({ $width }) => $width};
   margin: 60px 0 60px 0;
 `;
+const StyledSurfaceImage = styled.img`
+  width: 70px;
+  position: absolute;
+  left: 150px;
+  bottom: 280px;
+`;
 
 const StyledPlanetName = styled.h1`
   font-family: 'Antonio', sans-serif;
@@ -128,5 +134,6 @@ export {
   StyledStatBox,
   StyledStatLabel,
   StyledStatValue,
-  StyledPlanetName
+  StyledPlanetName,
+  StyledSurfaceImage
 };
