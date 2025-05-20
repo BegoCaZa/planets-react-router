@@ -1,9 +1,9 @@
 import {
-  MenuContainer,
-  PlanetItem,
-  PlanetDot,
-  PlanetName,
-  Arrow,
+  StyledMenuContainer,
+  StyledPlanetItem,
+  StyledPlanetDot,
+  StyledPlanetLink,
+  StyledArrow,
   StyledHamburgerMenu,
   StyledHamburgerMenuLine
 } from './menu.styles';
@@ -15,26 +15,31 @@ const Menu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   console.log(menuOpen);
-  const handleMenuClick = () => {
-    setMenuOpen(!menuOpen);
-  };
 
   return (
-    <MenuContainer>
-      <StyledHamburgerMenu onClick={handleMenuClick}>
+    <>
+      <StyledHamburgerMenu onClick={() => setMenuOpen(!menuOpen)}>
         <StyledHamburgerMenuLine />
         <StyledHamburgerMenuLine />
         <StyledHamburgerMenuLine />
       </StyledHamburgerMenu>
-
-      {PLANETS.map(planet => (
-        <PlanetItem key={v4()}>
-          <PlanetDot color={planet.color} />
-          <PlanetName>{planet.name}</PlanetName>
-          <Arrow src='/assets/arrow.png' />
-        </PlanetItem>
-      ))}
-    </MenuContainer>
+      <nav>
+        <StyledMenuContainer>
+          {PLANETS.map(planet => (
+            <StyledPlanetItem key={v4()} $menuOpen={menuOpen}>
+              <StyledPlanetDot color={planet.color} />
+              <StyledPlanetLink
+                to={planet.link}
+                onClick={() => setMenuOpen(false)}
+              >
+                {planet.name}
+              </StyledPlanetLink>
+              <StyledArrow src='/assets/arrow.png' />
+            </StyledPlanetItem>
+          ))}
+        </StyledMenuContainer>
+      </nav>
+    </>
   );
 };
 

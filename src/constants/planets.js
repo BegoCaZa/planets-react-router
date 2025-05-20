@@ -1,10 +1,11 @@
+import { COLORS } from '../styles/Colors';
 export const PLANETS = [
-  { name: 'MERCURY', color: '#DEF4FC' },
-  { name: 'VENUS', color: '#F7CC7F' },
-  { name: 'EARTH', color: '#545BFE' },
-  { name: 'MARS', color: '#FF6A45' },
-  { name: 'JUPITER', color: '#ECAD7A' },
-  { name: 'SATURN', color: '#FCCB6B' },
-  { name: 'URANUS', color: '#65F0D5' },
-  { name: 'NEPTUNE', color: '#497EFA' }
+  { name: 'MERCURY', color: COLORS.mercury, link: '/mercury' },
+  { name: 'VENUS', color: COLORS.venus, link: '/venus' },
+  { name: 'EARTH', color: COLORS.earth, link: '/earth' },
+  { name: 'MARS', color: COLORS.mars, link: '/mars' },
+  { name: 'JUPITER', color: COLORS.jupiter, link: '/jupiter' },
+  { name: 'SATURN', color: COLORS.saturn, link: '/saturn' },
+  { name: 'URANUS', color: COLORS.uranus, link: '/uranus' },
+  { name: 'NEPTUNE', color: COLORS.neptune, link: '/neptune' }
 ];

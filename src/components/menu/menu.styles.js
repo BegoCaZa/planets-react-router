@@ -1,9 +1,10 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledHamburgerMenu = styled.button`
   position: absolute;
   left: 330px;
-  top: -50px;
+  top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -23,7 +24,7 @@ const StyledHamburgerMenuLine = styled.div`
   margin: 0;
 `;
 
-const MenuContainer = styled.div`
+const StyledMenuContainer = styled.ul`
   position: absolute;
   top: 80px;
   left: 0;
@@ -33,15 +34,16 @@ const MenuContainer = styled.div`
   padding: 20px 0;
 `;
 
-const PlanetItem = styled.div`
-  display: flex;
+const StyledPlanetItem = styled.li`
+  /* {menuOpen && <Menu setMenuOpen={setMenuOpen} */
+  display: ${({ $menuOpen }) => ($menuOpen ? 'flex' : 'none')};
   align-items: center;
   padding: 18px 24px;
   cursor: pointer;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 `;
 
-const PlanetDot = styled.div`
+const StyledPlanetDot = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -49,24 +51,28 @@ const PlanetDot = styled.div`
   margin-right: 24px;
 `;
 
-const PlanetName = styled.span`
+const StyledPlanetLink = styled(NavLink)`
   color: #fff;
   font-weight: 700;
   font-size: 1.1rem;
   flex: 1;
+
+  &.active {
+    opacity: 1;
+  }
 `;
 
-const Arrow = styled.img`
+const StyledArrow = styled.img`
   width: 10px;
   height: 10px;
 `;
 
 export {
-  MenuContainer,
-  PlanetItem,
-  PlanetDot,
-  PlanetName,
-  Arrow,
+  StyledMenuContainer,
+  StyledPlanetItem,
+  StyledPlanetDot,
+  StyledPlanetLink,
+  StyledArrow,
   StyledHamburgerMenu,
   StyledHamburgerMenuLine
 };

@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Planet from '../../pages/planet/Planet';
 import Home from '../../pages/home/Home';
-import Menu from '../../components/menu/Menu';
 
 const Router = ({ menuOpen, setMenuOpen }) => {
   return (
@@ -22,3 +21,4 @@ const Router = ({ menuOpen, setMenuOpen }) => {
 };
 
 export default Router;
+//  {menuOpen && <Menu setMenuOpen={setMenuOpen} />}
