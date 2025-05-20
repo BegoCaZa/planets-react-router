@@ -1,21 +1,17 @@
-import {
-  StyledHeaderContainer,
-  StyledHamburgerMenu,
-  StyledHamburgerMenuLine
-} from './header.styles';
+import Menu from '../menu/Menu';
+import { StyledHeaderContainer } from './header.styles';
 
-const Header = ({ handleMenuClick }) => {
+const Header = () => {
   return (
     <>
       <StyledHeaderContainer>
         <h1>THE PLANETS</h1>
-        <StyledHamburgerMenu onClick={handleMenuClick}>
-          <StyledHamburgerMenuLine />
-          <StyledHamburgerMenuLine />
-          <StyledHamburgerMenuLine />
-        </StyledHamburgerMenu>
+        <Menu />
       </StyledHeaderContainer>
     </>
   );
 };
+
 export default Header;
+
+// handleMenuClick = { handleMenuClick };

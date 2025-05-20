@@ -1,5 +1,28 @@
 import styled from 'styled-components';
 
+const StyledHamburgerMenu = styled.button`
+  position: absolute;
+  left: 330px;
+  top: -50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+`;
+
+const StyledHamburgerMenuLine = styled.div`
+  width: 20px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 0;
+`;
+
 const MenuContainer = styled.div`
   position: absolute;
   top: 80px;
@@ -38,4 +61,12 @@ const Arrow = styled.img`
   height: 10px;
 `;
 
-export { MenuContainer, PlanetItem, PlanetDot, PlanetName, Arrow };
+export {
+  MenuContainer,
+  PlanetItem,
+  PlanetDot,
+  PlanetName,
+  Arrow,
+  StyledHamburgerMenu,
+  StyledHamburgerMenuLine
+};

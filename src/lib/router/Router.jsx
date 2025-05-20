@@ -6,7 +6,6 @@ import Menu from '../../components/menu/Menu';
 const Router = ({ menuOpen, setMenuOpen }) => {
   return (
     <>
-      {menuOpen && <Menu setMenuOpen={setMenuOpen} />}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/mercury' element={<Planet page='Mercury' />} />
