@@ -26,7 +26,7 @@ const StyledHamburgerMenuLine = styled.div`
 
 const StyledMenuContainer = styled.ul`
   position: absolute;
-  top: 103px;
+  top: 90px;
   left: 0;
   width: 100vw;
   background: #0b0b23;

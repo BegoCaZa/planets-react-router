@@ -7,14 +7,14 @@ const Router = () => {
     <>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/mercury' element={<Planet page='Mercury' />} />
-        <Route path='/venus' element={<Planet page='Venus' />} />
-        <Route path='/earth' element={<Planet page='Earth' />} />
-        <Route path='/mars' element={<Planet page='Mars' />} />
-        <Route path='/jupiter' element={<Planet page='Jupiter' />} />
-        <Route path='/saturn' element={<Planet page='Saturn' />} />
-        <Route path='/uranus' element={<Planet page='Uranus' />} />
-        <Route path='/neptune' element={<Planet page='Neptune' />} />
+        <Route path='/mercury' element={<Planet planet='mercury' />} />
+        <Route path='/venus' element={<Planet planet='venus' />} />
+        <Route path='/earth' element={<Planet planet='earth' />} />
+        <Route path='/mars' element={<Planet planet='mars' />} />
+        <Route path='/jupiter' element={<Planet planet='jupiter' />} />
+        <Route path='/saturn' element={<Planet planet='saturn' />} />
+        <Route path='/uranus' element={<Planet planet='uranus' />} />
+        <Route path='/neptune' element={<Planet planet='neptune' />} />
       </Routes>
     </>
   );
