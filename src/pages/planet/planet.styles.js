@@ -32,6 +32,8 @@ const StyledTabMenuOption = styled.span`
 `;
 
 const StyledPlanetImage = styled.img`
+  position: relative;
+  content: '';
   width: ${({ $width }) => $width};
   margin: 60px 0 60px 0;
 `;
@@ -39,7 +41,7 @@ const StyledSurfaceImage = styled.img`
   width: 70px;
   position: absolute;
   left: 150px;
-  bottom: 280px;
+  bottom: 230px;
 `;
 
 const StyledPlanetName = styled.h1`
