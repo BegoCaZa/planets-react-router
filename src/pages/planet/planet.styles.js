@@ -21,7 +21,9 @@ const StyledTabMenuOption = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
   padding: 10px;
 `;
 

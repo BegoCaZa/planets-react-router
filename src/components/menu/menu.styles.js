@@ -55,6 +55,7 @@ const StyledPlanetDot = styled.div`
 
 const StyledPlanetLink = styled(NavLink)`
   color: #fff;
+  font-family: 'League Spartan', sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
   flex: 1;
@@ -66,7 +67,6 @@ const StyledPlanetLink = styled(NavLink)`
 
 const StyledArrow = styled.img`
   width: 10px;
-  height: 10px;
 `;
 
 export {
