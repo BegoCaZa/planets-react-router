@@ -6,6 +6,7 @@ const StyledPlanetContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  gap: 20px;
 `;
 
 const StyledTabMenu = styled.div`
@@ -15,6 +16,7 @@ const StyledTabMenu = styled.div`
   justify-content: space-between;
   width: 85%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+  padding: 10px;
 `;
 
 const StyledTabMenuOption = styled.span`
@@ -22,13 +24,22 @@ const StyledTabMenuOption = styled.span`
   justify-content: center;
   align-items: center;
   font-family: 'League Spartan', sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   padding: 10px;
 `;
 
 const StyledPlanetImage = styled.img`
-  width: 50%;
+  width: ${({ $width }) => $width};
+  margin: 60px 0 60px 0;
+`;
+
+const StyledPlanetName = styled.h1`
+  font-family: 'Antonio', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
 `;
 const StyledSourceContainer = styled.div`
   display: flex;
@@ -60,6 +71,7 @@ const StyledDescriptionContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 85%;
+  margin: 0;
 `;
 const StyledPlanetDescription = styled.p`
   font-family: 'League Spartan', sans-serif;
@@ -67,11 +79,12 @@ const StyledPlanetDescription = styled.p`
   line-height: 25px;
   text-align: center;
   color: #fff;
+  margin: 0;
 `;
 
 //STATS
 const StyledStatsContainer = styled.div`
-  width: 80%;
+  width: 85%;
   margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
@@ -114,5 +127,6 @@ export {
   StyledStatsContainer,
   StyledStatBox,
   StyledStatLabel,
-  StyledStatValue
+  StyledStatValue,
+  StyledPlanetName
 };
