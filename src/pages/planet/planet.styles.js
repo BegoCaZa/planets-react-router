@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLORS } from '../../styles/Colors';
 
 const StyledPlanetContainer = styled.div`
   display: flex;
@@ -27,6 +28,7 @@ const StyledTabMenuOption = styled.span`
   font-size: 12px;
   font-weight: 700;
   padding: 10px;
+  color: ${({ $active }) => ($active ? '#fff' : 'rgba(255, 255, 255, 0.61)')};
 `;
 
 const StyledPlanetImage = styled.img`
