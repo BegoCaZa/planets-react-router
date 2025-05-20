@@ -24,9 +24,9 @@ const Menu = () => {
         <StyledHamburgerMenuLine />
       </StyledHamburgerMenu>
       <nav>
-        <StyledMenuContainer>
+        <StyledMenuContainer $menuOpen={menuOpen}>
           {PLANETS.map(planet => (
-            <StyledPlanetItem key={v4()} $menuOpen={menuOpen}>
+            <StyledPlanetItem key={v4()}>
               <StyledPlanetDot color={planet.color} />
               <StyledPlanetLink
                 to={planet.link}

@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Planet from '../../pages/planet/Planet';
 import Home from '../../pages/home/Home';
 
-const Router = ({ menuOpen, setMenuOpen }) => {
+const Router = () => {
   return (
     <>
       <Routes>

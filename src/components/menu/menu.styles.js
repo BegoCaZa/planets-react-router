@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const StyledHamburgerMenu = styled.button`
   position: absolute;
   left: 330px;
-  top: 30px;
+  top: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -26,17 +26,19 @@ const StyledHamburgerMenuLine = styled.div`
 
 const StyledMenuContainer = styled.ul`
   position: absolute;
-  top: 80px;
+  top: 103px;
   left: 0;
   width: 100vw;
   background: #0b0b23;
   z-index: 100;
   padding: 20px 0;
+  display: ${({ $menuOpen }) => ($menuOpen ? 'flex' : 'none')};
+  flex-direction: column;
 `;
 
 const StyledPlanetItem = styled.li`
   /* {menuOpen && <Menu setMenuOpen={setMenuOpen} */
-  display: ${({ $menuOpen }) => ($menuOpen ? 'flex' : 'none')};
+  display: flex;
   align-items: center;
   padding: 18px 24px;
   cursor: pointer;
