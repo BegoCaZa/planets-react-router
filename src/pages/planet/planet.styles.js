@@ -38,14 +38,18 @@ const StyledSourceContainer = styled.div`
 `;
 const StyledSourceTitle = styled.span`
   font-family: 'League Spartan', sans-serif;
-  font-size: 10px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.61);
+  font-weight: 300;
 `;
 const StyledSourceLink = styled.a`
   font-family: 'League Spartan', sans-serif;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   color: #fff;
   margin-left: 5px;
+  text-decoration: underline;
+  color: rgba(255, 255, 255, 0.61);
 
   }
 `;
@@ -65,6 +69,38 @@ const StyledPlanetDescription = styled.p`
   color: #fff;
 `;
 
+//STATS
+const StyledStatsContainer = styled.div`
+  width: 80%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+`;
+
+const StyledStatBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1.5px solid #393950;
+  padding: 18px;
+  background: transparent;
+`;
+
+const StyledStatLabel = styled.span`
+  color: #b7b7c7;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 14px;
+`;
+
+const StyledStatValue = styled.span`
+  color: #fff;
+  font-family: 'Antonio', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+`;
+
 export {
   StyledPlanetContainer,
   StyledTabMenu,
@@ -74,5 +110,9 @@ export {
   StyledSourceTitle,
   StyledSourceLink,
   StyledDescriptionContainer,
-  StyledPlanetDescription
+  StyledPlanetDescription,
+  StyledStatsContainer,
+  StyledStatBox,
+  StyledStatLabel,
+  StyledStatValue
 };
