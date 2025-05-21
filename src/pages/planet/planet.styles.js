@@ -35,17 +35,20 @@ const StyledTabMenuOption = styled.span`
 
 // un contenedor que tenga las dos imagenes y de ahi poner el relative
 
-const StyledPlanetImage = styled.img`
+const StyledPlanetImagesContainer = styled.div`
   position: relative;
-  content: '';
+`;
+
+const StyledPlanetImage = styled.img`
   width: ${({ $width }) => $width};
   margin: 60px 0 60px 0;
 `;
 const StyledSurfaceImage = styled.img`
   width: 70px;
   position: absolute;
-  left: 150px;
-  bottom: 230px;
+  left: 50%;
+  translate: -50%;
+  bottom: 0;
 `;
 
 const StyledPlanetName = styled.h1`
@@ -141,5 +144,6 @@ export {
   StyledStatLabel,
   StyledStatValue,
   StyledPlanetName,
-  StyledSurfaceImage
+  StyledSurfaceImage,
+  StyledPlanetImagesContainer
 };
