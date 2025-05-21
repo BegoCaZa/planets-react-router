@@ -36,6 +36,7 @@ const Planet = ({ planet }) => {
             key={v4()}
             onClick={() => setActiveTab(tab)}
             $active={activeTab === tab}
+            $planet={planet.toLowerCase()}
           >
             {tab.toUpperCase()}
           </StyledTabMenuOption>

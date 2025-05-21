@@ -17,7 +17,7 @@ const StyledTabMenu = styled.div`
   justify-content: space-between;
   width: 85%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.61);
-  padding: 10px;
+  padding: 10px 10px 1px 10px;
 `;
 
 const StyledTabMenuOption = styled.span`
@@ -29,7 +29,11 @@ const StyledTabMenuOption = styled.span`
   font-weight: 700;
   padding: 10px;
   color: ${({ $active }) => ($active ? '#fff' : 'rgba(255, 255, 255, 0.61)')};
+  border-bottom: ${({ $active, $planet }) =>
+    $active ? `4px solid ${COLORS[$planet.toLowerCase()]}` : 'none'};
 `;
+
+// un contenedor que tenga las dos imagenes y de ahi poner el relative
 
 const StyledPlanetImage = styled.img`
   position: relative;
@@ -71,8 +75,6 @@ const StyledSourceLink = styled.a`
   margin-left: 5px;
   text-decoration: underline;
   color: rgba(255, 255, 255, 0.61);
-
-  }
 `;
 
 const StyledDescriptionContainer = styled.div`
