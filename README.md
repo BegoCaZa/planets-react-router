@@ -1,4 +1,4 @@
-# Título del proyecto
+# Planets facts
 
 <p>
     <img src="" alt="Imagen del proyecto">
