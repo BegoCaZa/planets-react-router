@@ -28,16 +28,17 @@ const StyledMenuContainer = styled.ul`
   position: absolute;
   top: 90px;
   left: 0;
-  width: 100vw;
+  width: 100%;
   background: #0b0b23;
-  z-index: 100;
+  z-index: 1;
   padding: 20px 0;
-  display: ${({ $menuOpen }) => ($menuOpen ? 'flex' : 'none')};
+  display: flex;
+  translate: ${({ $menuOpen }) => ($menuOpen ? '0' : '-100%')};
+  transition: translate 0.3s;
   flex-direction: column;
 `;
 
 const StyledPlanetItem = styled.li`
-  /* {menuOpen && <Menu setMenuOpen={setMenuOpen} */
   display: flex;
   align-items: center;
   padding: 18px 24px;
