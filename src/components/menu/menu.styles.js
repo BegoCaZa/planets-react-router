@@ -14,6 +14,10 @@ const StyledHamburgerMenu = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const StyledHamburgerMenuLine = styled.div`
@@ -36,6 +40,18 @@ const StyledMenuContainer = styled.ul`
   translate: ${({ $menuOpen }) => ($menuOpen ? '0' : '-100%')};
   transition: translate 0.3s;
   flex-direction: column;
+
+  @media (min-width: 768px) {
+    position: static;
+    /* para que siga el flujo de la ubicacion que tiene (como ya no se va a sobreponer) */
+    flex-direction: row;
+    width: 100%;
+    background: transparent;
+    padding: 0;
+    /* quito la animacion */
+    translate: none;
+    transition: none;
+  }
 `;
 
 const StyledPlanetItem = styled.li`
@@ -44,6 +60,10 @@ const StyledPlanetItem = styled.li`
   padding: 18px 24px;
   cursor: pointer;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media (min-width: 768px) {
+    border: none;
+  }
 `;
 
 const StyledPlanetDot = styled.div`
@@ -52,22 +72,36 @@ const StyledPlanetDot = styled.div`
   border-radius: 50%;
   background: ${({ color }) => color};
   margin-right: 24px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const StyledPlanetLink = styled(NavLink)`
   color: #fff;
   font-family: 'League Spartan', sans-serif;
   font-weight: 700;
-  font-size: 1.1rem;
-  flex: 1;
+  font-size: 16px;
+  opacity: 0.5;
 
   &.active {
     opacity: 1;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+    font-weight: 700;
+    /* quito el borde inferior */
   }
 `;
 
 const StyledArrow = styled.img`
   width: 10px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 export {
