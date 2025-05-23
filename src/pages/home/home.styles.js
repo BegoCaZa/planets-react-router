@@ -11,6 +11,10 @@ const StyledHomeContainer = styled.div`
 
 const StyledSolarSystemImage = styled.img`
   width: 70%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `;
 
 export { StyledHomeContainer, StyledSolarSystemImage };
