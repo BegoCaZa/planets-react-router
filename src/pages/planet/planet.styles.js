@@ -15,9 +15,25 @@ const StyledTabMenu = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  text-align: center;
   width: 85%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.61);
   padding: 10px 10px 1px 10px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const StyledTabMenuVertical = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 260px;
+  }
 `;
 
 const StyledTabMenuOption = styled.span`
@@ -95,6 +111,11 @@ const StyledPlanetDescription = styled.p`
   text-align: center;
   color: #fff;
   margin: 0;
+
+  @media (min-width: 768px) {
+    text-align: left;
+    width: 100%;
+  }
 `;
 
 //STATS
@@ -129,6 +150,55 @@ const StyledStatValue = styled.span`
   font-weight: 700;
 `;
 
+const StyledPlanetContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    width: 85%;
+  }
+`;
+
+const StyledPlanetInfoDesktop = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 32px;
+    width: 100%;
+  }
+`;
+
+const StyledTabMenuVerticalButton = styled.button`
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  gap: 18px;
+  background: ${({ $active, $planet }) =>
+    $active ? COLORS[$planet] : 'transparent'};
+
+  color: ${({ $active }) =>
+    $active ? '#070724;' : 'rgba(255, 255, 255, 0.8)'};
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: 'League Spartan', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 18px 24px;
+  cursor: pointer;
+  opacity: ${({ $active }) => ($active ? 1 : 0.4)};
+`;
+
 export {
   StyledPlanetContainer,
   StyledTabMenu,
@@ -145,5 +215,9 @@ export {
   StyledStatValue,
   StyledPlanetName,
   StyledSurfaceImage,
-  StyledPlanetImagesContainer
+  StyledPlanetImagesContainer,
+  StyledPlanetContent,
+  StyledTabMenuVertical,
+  StyledTabMenuVerticalButton,
+  StyledPlanetInfoDesktop
 };

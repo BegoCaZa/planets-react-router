@@ -9,6 +9,10 @@ const StyledHeaderContainer = styled.header`
   padding: 0px 20px;
   margin: 0;
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.47);
+
+  @media (min-width: 768px) {
+    padding: 0px 40px;
+  }
 `;
 
 export { StyledHeaderContainer };

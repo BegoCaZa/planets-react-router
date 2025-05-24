@@ -5,7 +5,8 @@ import {
   StyledPlanetLink,
   StyledArrow,
   StyledHamburgerMenu,
-  StyledHamburgerMenuLine
+  StyledHamburgerMenuLine,
+  StyledMenuDotAndLabelContainer
 } from './menu.styles';
 import { PLANETS } from '../../constants/planets';
 import { v4 } from 'uuid';
@@ -27,13 +28,15 @@ const Menu = () => {
         <StyledMenuContainer $menuOpen={menuOpen}>
           {PLANETS.map(planet => (
             <StyledPlanetItem key={v4()}>
-              <StyledPlanetDot color={planet.color} />
-              <StyledPlanetLink
-                to={planet.link}
-                onClick={() => setMenuOpen(false)}
-              >
-                {planet.name}
-              </StyledPlanetLink>
+              <StyledMenuDotAndLabelContainer>
+                <StyledPlanetDot color={planet.color} />
+                <StyledPlanetLink
+                  to={planet.link}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {planet.name}
+                </StyledPlanetLink>
+              </StyledMenuDotAndLabelContainer>
               <StyledArrow src='/assets/arrow.png' />
             </StyledPlanetItem>
           ))}

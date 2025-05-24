@@ -57,12 +57,23 @@ const StyledMenuContainer = styled.ul`
 const StyledPlanetItem = styled.li`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 18px 24px;
   cursor: pointer;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
   @media (min-width: 768px) {
     border: none;
+  }
+`;
+const StyledMenuDotAndLabelContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    display: none;
   }
 `;
 
@@ -111,5 +122,6 @@ export {
   StyledPlanetLink,
   StyledArrow,
   StyledHamburgerMenu,
-  StyledHamburgerMenuLine
+  StyledHamburgerMenuLine,
+  StyledMenuDotAndLabelContainer
 };

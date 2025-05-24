@@ -14,11 +14,14 @@ import {
   StyledStatValue,
   StyledPlanetName,
   StyledSurfaceImage,
-  StyledPlanetImagesContainer
+  StyledPlanetImagesContainer,
+  StyledPlanetContent,
+  StyledTabMenuVertical,
+  StyledTabMenuVerticalButton,
+  StyledPlanetInfoDesktop
 } from './planet.styles';
 import { useState } from 'react';
 import { PLANETS_DATA } from '../../constants/planets_data';
-import { v4 } from 'uuid';
 
 const Planet = ({ planet }) => {
   const [activeTab, setActiveTab] = useState('overview');
@@ -28,18 +31,22 @@ const Planet = ({ planet }) => {
     p => p.name.toLowerCase() === planet.toLowerCase()
   );
 
-  const TABS = ['overview', 'structure', 'surface'];
+  const TABS = [
+    { key: 'overview', label: 'OVERVIEW', number: '01' },
+    { key: 'structure', label: 'STRUCTURE', number: '02' },
+    { key: 'surface', label: 'SURFACE', number: '03' }
+  ];
   return (
     <StyledPlanetContainer>
       <StyledTabMenu>
         {TABS.map(tab => (
           <StyledTabMenuOption
-            key={v4()}
-            onClick={() => setActiveTab(tab)}
-            $active={activeTab === tab}
+            key={tab.key}
+            onClick={() => setActiveTab(tab.key)}
+            $active={activeTab === tab.key}
             $planet={planet.toLowerCase()}
           >
-            {tab.toUpperCase()}
+            {tab.label.toUpperCase()}
           </StyledTabMenuOption>
         ))}
       </StyledTabMenu>
@@ -62,18 +69,37 @@ const Planet = ({ planet }) => {
         )}
       </StyledPlanetImagesContainer>
 
-      <StyledPlanetName>{planet.toUpperCase()}</StyledPlanetName>
-      <StyledDescriptionContainer>
-        <StyledPlanetDescription>
-          {planetData.description[activeTab]}
-        </StyledPlanetDescription>
-      </StyledDescriptionContainer>
-      <StyledSourceContainer>
-        <StyledSourceTitle>Source:</StyledSourceTitle>
-        <StyledSourceLink target='_blank' href={planetData.source}>
-          Wikipedia
-        </StyledSourceLink>
-      </StyledSourceContainer>
+      <StyledPlanetContent>
+        <StyledPlanetInfoDesktop>
+          <StyledPlanetName>{planet.toUpperCase()}</StyledPlanetName>
+          <StyledDescriptionContainer>
+            <StyledPlanetDescription>
+              {planetData.description[activeTab]}
+            </StyledPlanetDescription>
+          </StyledDescriptionContainer>
+          <StyledSourceContainer>
+            <StyledSourceTitle>Source:</StyledSourceTitle>
+            <StyledSourceLink target='_blank' href={planetData.source}>
+              Wikipedia
+            </StyledSourceLink>
+          </StyledSourceContainer>
+        </StyledPlanetInfoDesktop>
+
+        {/* Menú vertical solo en tablet/desktop */}
+        <StyledTabMenuVertical>
+          {TABS.map(tab => (
+            <StyledTabMenuVerticalButton
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              $active={activeTab === tab.key}
+              $planet={planet.toLowerCase()}
+            >
+              <span>{tab.number}</span>
+              {tab.label.toUpperCase()}
+            </StyledTabMenuVerticalButton>
+          ))}
+        </StyledTabMenuVertical>
+      </StyledPlanetContent>
 
       <StyledStatsContainer>
         <StyledStatBox>
