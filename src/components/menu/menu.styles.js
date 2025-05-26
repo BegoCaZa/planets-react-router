@@ -71,10 +71,6 @@ const StyledMenuDotAndLabelContainer = styled.div`
   flex-direction: row;
   gap: 8px;
   align-items: center;
-
-  @media (min-width: 768px) {
-    display: none;
-  }
 `;
 
 const StyledPlanetDot = styled.div`

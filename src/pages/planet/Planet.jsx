@@ -85,7 +85,7 @@ const Planet = ({ planet }) => {
           </StyledSourceContainer>
         </StyledPlanetInfoDesktop>
 
-        {/* Menú vertical solo en tablet/desktop */}
+        {/* menú vertical solo en desktop */}
         <StyledTabMenuVertical>
           {TABS.map(tab => (
             <StyledTabMenuVerticalButton
